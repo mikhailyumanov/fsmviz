@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>FSMViz | Projects</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap"
+              rel="stylesheet">
+        <link rel="stylesheet/less" type="text/css" th:href='@{/styles/projects/style.less}'>
+        <script src="https://cdn.jsdelivr.net/npm/less@3.13"></script>
+    </head>
+
+    <body>
+        <div class="project-box-holder">
+            <div class="project-box"  th:each="project : ${projects}">
+                <a th:href="@{/projects/{id}/edit(id=${project.getId()})}"
+                   th:text="${project.getTitle()}">Project</a>
+                <form th:method="DELETE"
+                      th:action="@{/projects/{id}(id=${project.getId()})}">
+                    <input type="submit" class="default-button" value="Delete">
+                </form>
+            </div>
+        </div>
+
+        <div class="new-project-box">
+            <form th:method="POST" th:action="@{/projects}">
+                <input type="submit" class="default-button" value="Add project">
+            </form>
+        </div>
+    </body>
+</html>

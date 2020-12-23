@@ -1,0 +1,24 @@
+{
+  "name": "fsmviz-app",
+  "version": "0.1.0",
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "4.0.1",
+    "redux": "^4.0.5",
+    "react-redux": "^7.2.2",
+    "react-bootstrap": "^1.4.0"
+  },
+  "scripts": {
+    "watch": "webpack --watch -d --output ./target/classes/static/built/bundle.js"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.2",
+    "react-force-graph-2d": "^1.18.1",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.1.0"
+  }
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>FSMViz | Editor</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap"
+              rel="stylesheet">
+        <link rel="stylesheet/less" type="text/css" th:href='@{/styles/style.less}'>
+        <script src="https://cdn.jsdelivr.net/npm/less@3.13"></script>
+    </head>
+
+    <body>
+        <div id="header-holder">
+            <div id="header">
+                <form hidden id="header-form-projects" th:method="GET" th:action="@{/projects}"></form>
+                <button type="submit" class="header-button" form="header-form-projects">Projects</button>
+                <button class="header-button">Edit</button>
+                <button class="header-button">Test</button>
+                <button class="header-button">Visualize</button>
+                <input type="text"
+                       class="project-name header-text-input"
+                       placeholder="Project name"
+                       form="graph-input-form"
+                       th:value="${project.getTitle()}"
+                       onchange="document.getElementById('graph-input-form-title')
+                         .setAttribute('value', this.value)"
+                />
+            </div>
+        </div>
+
+        <div id="initial-state-holder" hidden th:value="${project.getFsm().toString()}"></div>
+
+        <div id="body">
+            <div id="canvas">
+            </div>
+
+            <div id="graph-editor-holder">
+            </div>
+
+            <form id="graph-input-form"
+                  th:method="PATCH"
+                  th:action="@{/editor/{id}(id=${project.getId()})}"
+                  th:object="${project}">
+                <input hidden id="graph-input-form-fsm" type="text" th:field="*{fsm}" value="">
+                <input hidden id="graph-input-form-title" type="text" th:field="*{title}" value="">
+            </form>
+        </div>
+
+        <script th:src="@{/built/bundle.js}"></script>
+    </body>
+
+</html>
+

@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+#header {
+  display: flex;
+}
+
+
+.default-element {
+  background-color: white;
+
+  margin: 0;
+
+  border: 1px solid #bebebe;
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 16pt;
+}
+
+.default-button {
+  .default-element;
+}
+
+.default-box {
+  .default-element;
+}
+
+.default-text-input {
+  .default-element;
+}
+
+.header-element {
+  .default-element;
+  border-style: solid solid solid none;
+  flex: 1;
+}
+
+.header-button {
+  .header-element;
+}
+
+
+.header-text-input {
+  .default-text-input;
+  flex: auto;
+}
+
+
+#body {
+  display: flex;
+}
+
+#canvas {
+  width: 50%;
+}
+
+#graph-editor-holder {
+  -webkit-flex: 1;
+  flex: 1;
+}
+
+#graph-input {
+  height: 100%;
+}
+
+#graph-input-form {
+}
+
+#text-editor {
+  margin: 3px;
+  width: 98%;
+  height: 80%;
+}
