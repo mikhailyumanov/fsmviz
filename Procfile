@@ -1,1 +1,1 @@
-web: java -jar target/fsmviz.war -cp target/classes
+web: java -jar target/fsmviz.war -cp target/classes com.mikhailyumanov.fsmviz.FSMVizApplication
