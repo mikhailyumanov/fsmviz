@@ -25,7 +25,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
 
         <spring.version>5.3.2</spring.version>
-        <start-class>src.main.java.com.mikhailyumanov.fsmviz.FSMVizApplication</start-class>
+        <start-class>com.mikhailyumanov.fsmviz.FSMVizApplication</start-class>
     </properties>
 
     <dependencies>
