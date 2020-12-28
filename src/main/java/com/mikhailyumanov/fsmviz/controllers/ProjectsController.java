@@ -21,7 +21,7 @@ public class ProjectsController {
   @GetMapping()
   public String index(Model model) {
     model.addAttribute("projects", projectDAO.index());
-    return "/projects/index";
+    return "projects/index";
   }
 
   @PostMapping
